@@ -1,16 +1,16 @@
-# Usa la imagen base de Python
-FROM python:3.9
+FROM python:3.8
 
-# Establece el directorio de trabajo en /app
-WORKDIR /app
+# Create app directory
+WORKDIR /usr/src/app
 
-# Copia los archivos necesarios a la imagen
-COPY app.py .
-COPY routes.py .
-COPY taller2/templates/ ./taller2/templates/
+# Copy the Flask app source to the working directory
+COPY . .
 
-# Expone el puerto 5000 para que la aplicación sea accesible
-EXPOSE 5000
+# Install Flask
+RUN pip install -r requirements.txt
 
-# Ejecuta la aplicación al iniciar el contenedor
+# Expose the required port
+EXPOSE 8080
+
+# Specify the command to run the Flask app
 CMD ["python", "app.py"]
