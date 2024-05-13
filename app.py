@@ -1,6 +1,6 @@
 from flask import Flask
 from routes import pokeneas_bp
-
+import os
 
 app = Flask(__name__, template_folder='taller2/templates')
 app.register_blueprint(pokeneas_bp)
