@@ -4,7 +4,7 @@ import os
 
 pokeneas_bp = Blueprint('pokeneas_bp', __name__)
 
-@pokeneas_bp.route('/json_pokenea')
+@pokeneas_bp.route('/')
 def json_pokenea():
     from app import pokeneas
     container_id = os.uname()[1]
